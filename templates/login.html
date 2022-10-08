@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- Login Start -->
+<div class="login">
+    <div class="container">
+        {% for message in messages %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+        <div class="section-header">
+            <h3>User Login</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="login-form">
+                    <form action="login" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Username: </label>
+                                <input class="form-control" type="text" name="username">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Password: </label>
+                                <input class="form-control" type="text" name="password">
+                            </div>
+                            <div class="col-md-12">
+                                Not a user? <a href="signup">Register here</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input type="submit" style="background-color: #3F69AA; color: white;" class="btn"
+                                value="Login">
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- <div class="col-md-6">
+                <div class="register-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>First Name</label>
+                            <input class="form-control" type="text" placeholder="First Name">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Last Name"</label>
+                            <input class="form-control" type="text" placeholder="Last Name">
+                        </div>
+                        <div class="col-md-6">
+                            <label>E-mail</label>
+                            <input class="form-control" type="text" placeholder="E-mail">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Mobile No</label>
+                            <input class="form-control" type="text" placeholder="Mobile No">
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+    </div>
+</div>
+</div>
+<!-- Login End -->
+
+{% endblock %}
